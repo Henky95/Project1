@@ -1,0 +1,14 @@
+
+ <form>
+  Username:<br>
+  <input type="text" name="Username"><br>
+  Password:<br>
+  <input type="text" name="Password"><br>
+  naam dienst:<br>
+<input type="text" name="Dienst"><br>
+
+  aangevraagt/aangeboden:<br>
+  <input type="radio" name="type" value="aangeboden" checked> aangeboden<br>
+  <input type="radio" name="type" value="aangevraagt"> aangevraagt<br>
+  <input type ="submit"value = "delete">
+</form> 
