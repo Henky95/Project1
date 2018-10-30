@@ -20,8 +20,9 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
 <div class="navbar">
     <a href="index.php">HOME</a>
-    <a href="Add_service.php">Offer</a>
-    <a href="#">Order</a>
-    <a href="dienstAanvragen.php">Request</a>
+    <a href="Add_service.php">Aanbod</a>
+    <a href="#">Bestellen</a>
+    <a href="dienstAanvragen.php">Aanvraagen</a>
+	<a href="#">inloggen</a>
     <a href="accountAanmelden.php" class="right">Account Maken</a>
 </div>

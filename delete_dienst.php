@@ -1,4 +1,4 @@
-
+<?php include "shared/Header.php";?>
  <form>
   Username:<br>
   <input type="text" name="Username"><br>
@@ -12,3 +12,4 @@
   <input type="radio" name="type" value="aangevraagt"> aangevraagt<br>
   <input type ="submit"value = "delete">
 </form> 
+<?php include"shared/Footer.html" ?>
