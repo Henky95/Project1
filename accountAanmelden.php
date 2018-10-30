@@ -70,7 +70,7 @@ include 'functions.php';
 		$email = test_input($_POST["Gebruiknaam"]);
 		$wachtwoord = test_input($_POST["Wachtwoord"]);
 //Database kopelling
-		$query = "insert into users ( 'FirstName' , 'LastName', 'Studie', 'PhoneNummer ','EmailAdress', 'Password')	value (".$voornaam."','".$achternaam."','".$Opleiding."','".$TelNummer."','".$email."','".$wachtwoord.") ";
+		$query = "insert into users ( 'FïrstName' , 'LastName', 'Studie', 'PhoneNummer ','EmailAdress', 'Password')	value (".$voornaam."','".$achternaam."','".$Opleiding."','".$TelNummer."','".$email."','".$wachtwoord.") ";
 		        echo Query($query);
     } else {
         echo 'vul alles in';
