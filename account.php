@@ -2,25 +2,21 @@
 
 <style>
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #0099ff; 
     border: none;
     color: white;
     padding: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 32px;
     margin: 4px 2px;
     cursor: pointer;
 }
 </style>
-<h2>Rounded Buttons</h2>
-<p>Add rounded corners to a button with the border-radius property:</p>
 
-<button class="button button1">2px</button>
-<button class="button button2">4px</button>
-<button class="button button3">8px</button>
-<button class="button button4">12px</button>
-<button class="button button5">50%</button>
+<a class="button" href="accountAanmelden.php">login</a>
+<a class="button" href="#">verwijder</a>
+<a class="button" href="#">account aanmaken</a>
 
-<?php include "shared/footer.php"; ?>
+<?php include "shared/Footer.html"; ?>
