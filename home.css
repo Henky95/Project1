@@ -115,4 +115,82 @@ form textarea {
         float: none;
         width: 100%;
     }
+}.geheel{
+    width: 1500px;
+
+}
+.bestelling{
+    background-color: #f0f5f5;
+    width: 300px;
+    height: 300px;
+    float: left;
+    border: 1px solid black;
+}
+
+.bestelling2{
+    background-color: #f0f5f5;
+    width: 300px;
+    height:  300px;
+    overflow: hidden;
+    border: 1px solid black;
+    float: left;
+}
+.bestelling3{
+    width : 300px;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: #f0f5f5;
+    border: solid black 1px;
+}
+.bestelling:hover{
+
+    background-color:  #b3cccc;
+
+}
+
+.bestelling2:hover{
+
+background-color:  #b3cccc;
+
+}
+.bestelling3:hover{
+
+background-color:  #b3cccc;
+
+}
+
+p{
+    font: Calibri;
+    Color: #00004d;
+
+}
+p:hover{
+    color: #000;
+}
+a.dienstbestellen{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+a.dienstbestellen:hover{
+
+    text-decoration: underline;
+
+}
+a.dienstbestellen:visited{
+    text-decoration: none;
+    color: blue;
+    
+
+}
+div.dienstbestellen{
+    width: 50%;
+    height: 250px;
+    float: left;
+    display: block;
+    border-right: white solid 1px;
+    border-bottom: white solid 1px;
+    text-align: center;
+    
 }
