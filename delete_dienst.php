@@ -1,15 +1,42 @@
 <?php include "shared/Header.php";?>
- <form>
-  Username:<br>
-  <input type="text" name="Username"><br>
-  Password:<br>
-  <input type="text" name="Password"><br>
-  naam dienst:<br>
-<input type="text" name="Dienst"><br>
+<?php 
+//connectie maken met host
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "ProjectDB"; //naam  van de database
+$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+//test of het werkt
+	if(mysqli_connect_errno()){
+		die("verbinding ging fout".
+		mysqli_connect_error()."(".
+		mysqli_connect_errno().")");
+	}
+	
+$query = "SELECT Id, Title, Description FROM Services ";/* WHERE User_Id = 1*/
+$result = mysqli_query($db,$query) or die('Error querying database.');
+echo "naam dienst:"
+?>
+ <form method="post">
+<select name="dienst">
 
-  aangevraagt/aangeboden:<br>
-  <input type="radio" name="type" value="aangeboden" checked> aangeboden<br>
-  <input type="radio" name="type" value="aangevraagt"> aangevraagt<br>
-  <input type ="submit"value = "delete">
-</form> 
+<?php //selecteer 1 dienst
+	while ($row = mysqli_fetch_assoc($result)){
+	 echo "<option value =\"" . $row['Id'] ."\"> " . $row['d\Title'] . " </option>\n";
+	 }
+
+?>
+</select>
+<br>
+<br>
+<input type="submit" value="select">
+</form>
+
+<?php
+ if(!isset($_POST['submit'])){
+	echo("Geselceteerde dienst:" . $_POST['Title'] ."<br>");
+	echo("omschrijving:<br/>" . $_POST['Description'] ."<br>");
+ }
+ ?> 
+
 <?php include"shared/Footer.html" ?>
