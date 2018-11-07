@@ -15,9 +15,11 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 	
 $query = "SELECT Id, Title, Description FROM Services ";/* WHERE User_Id = 1*/
 $result = mysqli_query($db,$query) or die('Error querying database.');
-echo "naam dienst:"
+
 ?>
  <form method="post">
+         <div class="center">
+		 <label for="dienst">Naam dienst: </label>
 <select name="dienst">
 
 <?php //selecteer 1 dienst
@@ -27,6 +29,7 @@ echo "naam dienst:"
 
 ?>
 </select>
+</div>
 <br>
 <br>
 <input type="submit" value="select">
