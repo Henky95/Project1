@@ -23,7 +23,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
     <a href="index.php">HOME</a>
     <a href="Add_service.php">Aanbod</a>
     <a href="#">Bestellen</a>
-    <a href="dienstAanvragen.php">Aanvraagen</a>
+    <a href="dienstAanvragen.php">Aanvragen</a>
 	<a href="#">inloggen</a>
     <a href="accountAanmelden.php" class="right">Account Maken</a>
 </div>

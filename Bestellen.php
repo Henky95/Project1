@@ -2,6 +2,7 @@
 <div class='geheel'>
 
 <?php 
+    #Gemaakt door Swen:
     include 'database.php';
     include 'functions.php';
     #Query om te runnen binnen de DATABASE:

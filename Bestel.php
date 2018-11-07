@@ -1,4 +1,6 @@
 <?php  
+
+    #gemaakt door Swen:
     include 'header.php';
     include 'database.php';
     include 'functions.php';
@@ -27,6 +29,8 @@
     echo "<input type='submit' value='Send'/>";
     echo "</form>";
     mysqli_free_result($result);
+
+    include 'shared/footer.html';
 ?>
 
 <body>
