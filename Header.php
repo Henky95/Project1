@@ -9,6 +9,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
     <title>Page Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="img/help4students.png">
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body>
