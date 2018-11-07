@@ -15,8 +15,8 @@
 }
 </style>
 
-<a class="button" href="accountAanmelden.php">login</a>
+<a class="button" href="#">login</a>
 <a class="button" href="#">verwijder</a>
-<a class="button" href="#">account aanmaken</a>
+<a class="button" href="accountAanmelden.php">account aanmaken</a>
 
 <?php include "shared/Footer.html"; ?>
