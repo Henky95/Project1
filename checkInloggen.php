@@ -15,7 +15,7 @@ if(isset($_POST["accountnaam"], $_POST["wachtwoord"])) {
 	if(mysqli_num_rows($result1) > 0) {
 		$_SESSION["Ingelogd"] = true;
 		$_SESSION["naamEmail"] = $nameEmail;
-		$queryAccountID = "SELECT id FROM Users WHERE emailAdres='".$nameEmail."'";
+		$queryAccountID = "SELECT id FROM Users WHERE EmailAdress='".$nameEmail."'";
 		$_SESSION["accountID"] = mysqli_query($db,$queryAccountID);
 		echo "Login succesvol, welkom!<br>";
 	} else {
