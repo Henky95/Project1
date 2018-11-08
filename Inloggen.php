@@ -8,4 +8,4 @@
     <input type="submit" value="Inloggen"><br>
 </form>
 
-<?php include "shared/Footer.php" ?>
+<?php include "shared/Footer.html" ?>
