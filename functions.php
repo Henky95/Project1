@@ -20,11 +20,11 @@ Function LoggedIn(){
 function GetCurrrentUserName(){
 	$id = GetCurrentUserId();
 	if ($id != null){
-		Query("select FirstName from mydb.users where Id = $id")
+		Query("select FirstName from mydb.users where Id = $id");
 		
 		
 		
-		return 		
+		return; 		
 	}	else
 	{
 		return null;

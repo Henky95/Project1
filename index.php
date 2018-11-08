@@ -17,7 +17,7 @@
             include 'functions.php';
 
             $table = Query("SELECT * FROM mydb.services");
-
+			
             if (mysqli_num_rows($table) > 0) {
                 while ($row = mysqli_fetch_assoc($table)) {
 

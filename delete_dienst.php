@@ -1,5 +1,6 @@
 <?php include "shared/Header.php";?>
 <?php 
+include "functions.php";
 //connectie maken met host
 $dbhost = "localhost";
 $dbuser = "root";
@@ -13,7 +14,7 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 		mysqli_connect_errno().")");
 	}
 	
-$query = "SELECT Id, Title, Description FROM Services ";/* WHERE User_Id = 1*/
+$query = "SELECT Id, Title, Description FROM Services";//WHERE User_Id = $id";
 $result = mysqli_query($db,$query) or die('Error querying database.');
 
 ?>
@@ -29,10 +30,10 @@ $result = mysqli_query($db,$query) or die('Error querying database.');
 
 ?>
 </select>
-</div>
-<br>
+
 <br>
 <input type="submit" value="select">
+</div>
 </form>
 
 <?php
