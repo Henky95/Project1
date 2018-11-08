@@ -23,6 +23,6 @@ if(isset($_POST["accountnaam"], $_POST["wachtwoord"])) {
 	}
 }
 
-include "Footer.php";
+include "shared/Footer.php";
 ?>
 <a href = "Inloggen.php">Naar inlogpagina</a>
