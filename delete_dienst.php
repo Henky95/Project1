@@ -1,6 +1,7 @@
-<?php include "shared/Header.php";?>
-<?php 
+<?php include "shared/Header.php";
+
 include "functions.php";
+
 //connectie maken met host
 $dbhost = "localhost";
 $dbuser = "root";
@@ -44,12 +45,18 @@ $result = mysqli_query($db,$query) or die('Error querying database.');
 	 $row2 = mysqli_fetch_assoc($result2);
 	 echo "<br>";
 	echo("Geselceteerde dienst: " . $row2['Title'] ."<br><br>");
-	echo("omschrijving: " . $row2['Description'] ."<br>");
- }
- else{ 
-	echo("selecteer een dienst <br>");
+	echo("omschrijving: " . $row2['Description'] ."<br><br>");
+	echo ('<input type="submit" name="delete" value="delete">');
+	 }
 
  } 
- ?> 
+ elseif(isset($_POST['delete'])){
+ $query3 = "  mydb.Services WHERE Id = ";
+ echo "deleted";
+ 
+ } 
+ else{ 
+	echo("selecteer een dienst <br>");
+  ?> 
 </div>
 <?php include"shared/Footer.html" ?>
