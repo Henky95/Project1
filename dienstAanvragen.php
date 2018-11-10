@@ -1,4 +1,4 @@
- <?php
+<?php
 //header toevoegen
  include "shared/Header.php"; ?>
 <?php 
@@ -25,7 +25,9 @@ if (isset($_POST["submit"]) && !empty($_POST["submit"])){// $_SERVER["REQUEST_ME
 
                      //        echo $query;
 
-        $query = "INSERT INTO services (Description, IsRequest, Users_Id) VALUES ('$Opleiding', '$melding', '1')";
+        $userId = GetCurrentUserId();
+
+        $query = "INSERT INTO mydb.services (Title, Description, IsRequest, Users_Id) VALUES ('$Opleiding', '$melding', true, '$userId')";
 
         echo Query($query);
     } else {
@@ -53,10 +55,6 @@ htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <legend></legend>
 Opleiding: <br>
 <input type="text" name="Opleiding" > <span class="error">*<?php echo $Opleidingerror;  ?> </span> <br><br>
-Ik heb een vraag voor: <span class="error">* </span> <br><br>
-<input type="radio" name="vraag" value="medeweker" checked> medewerker<br>
-<input type="radio" name="vraag" value="studenten"> studenten<br>
-<input type="radio" name="vraag" value="allebei"> allebei<br>
 
 Gevraaged:<span class="error">* <?php echo $meldingerror;  ?></span> <br>
 <textarea name="melding" rows="5" cols="40" placeholder="Kan gebruikt worden
