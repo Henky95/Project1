@@ -49,14 +49,16 @@ $result = mysqli_query($db,$query) or die('Error querying database.');
 	echo ('<input type="submit" name="delete" value="delete">');
 	 }
 
- } 
- elseif(isset($_POST['delete'])){
- $query3 = "  mydb.Services WHERE Id = ";
- echo "deleted";
  
+ elseif(isset($_POST['delete'])){ 
+ $dienstid = $_POST['dienst'];
+ $query3 = " DELETE FROM mydb.Services WHERE Id = $dienstid ";
+ echo "deleted";
+ mysqli_query($db,$query3);
  } 
  else{ 
 	echo("selecteer een dienst <br>");
-  ?> 
+ }?> 
 </div>
+</form>
 <?php include"shared/Footer.html" ?>
