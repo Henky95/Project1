@@ -1,5 +1,7 @@
 <?php include "shared/Header.php";
-
+/*database code :
+INSERT INTO services (Id,Title,Description,ReturnService,Users_Id,IsRequest) 
+VALUES(1,'Wiskunde Bijles','Bijles voor een Examen','20 euro per les',1,1);*/
 include "functions.php";
 
 //connectie maken met host
