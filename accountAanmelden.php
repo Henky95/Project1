@@ -3,8 +3,8 @@
  include "shared/Header.php"; ?>
 
 <?php
-//include 'functions.php';
-include "functions.php";
+include 'functions.php';
+
 $voornaam=$achternaam=$TelNummer=$Opleiding=$email=$wachtwoord="";
 	$voornaamErr=$achternaamErr=$TelNummerErr=$OpleidingErr=$emailErr=$wachtwoordErr="";
 
@@ -30,10 +30,10 @@ $finalError = '';
         $email = test_input($_POST["Gebruiknaam"]);
         $wachtwoord = test_input($_POST["Wachtwoord"]);
 //Database kopelling
-       //$query = "INSERT INTO users ( FirstName, LastName, Studie, PhoneNummer, EmailAdress, Password, Adress_AdressId ) VALUES 
-       //('".$voornaam."','".$achternaam."','".$Opleiding."','".$TelNummer."','".$email."','".$wachtwoord."','1' ) ";
-        $query = "INSERT INTO users (FirstName, LastName, Studie, PhoneNummer, EmailAdress, Password, Adress_AdressId) VALUES ('$voornaam', '$achternaam', '$Opleiding','$TelNummer', '$email', '$wachtwoord', '1') ";
-               echo Query($query);
+      
+        $query = "INSERT INTO mydb.users (FirstName, LastName, Studie, PhoneNumber, EmailAdress, Password, Adress_AdressId) VALUES ('$voornaam', '$achternaam', '$Opleiding','$TelNummer', '$email', '$wachtwoord', 1) ";
+               var_dump($query);
+               var_dump( Query($query));
     } else {
         
 	//controle
