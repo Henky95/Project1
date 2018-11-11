@@ -2,7 +2,6 @@
 //header toevoegen
  include "shared/Header.php"; ?>
 <?php 
-include 'functions.php';
 
 $Opleiding = $melding = "";
 $Opleidingerror = $meldingerror = "";

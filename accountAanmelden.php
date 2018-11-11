@@ -3,8 +3,6 @@
  include "shared/Header.php"; ?>
 
 <?php
-//include 'functions.php';
-include "functions.php";
 $voornaam=$achternaam=$TelNummer=$Opleiding=$email=$wachtwoord="";
 	$voornaamErr=$achternaamErr=$TelNummerErr=$OpleidingErr=$emailErr=$wachtwoordErr="";
 

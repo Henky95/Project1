@@ -1,7 +1,7 @@
 <?php include "shared/Header.php" ?>
 
 <form action="checkInloggen.php" method="post">
-    Accountnaam: <br>
+    E-mail: <br>
     <input type="text" name="accountnaam"><br>
     Wachtwoord: <br>
     <input type="password" name="wachtwoord"><br>

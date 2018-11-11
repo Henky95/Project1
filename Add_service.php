@@ -25,8 +25,6 @@
     </form>
 
 <?php
-include 'functions.php';
-
 if (!empty($_POST)) {
     if (isset($_POST['title']) && !empty($_POST['title']) &&
         isset($_POST['Description']) && !empty($_POST['Description']) &&
