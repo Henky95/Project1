@@ -32,8 +32,8 @@
 		if ($mail->send())
 		    $msg = "Your email has been sent, thank you!";
 		else
-		    //$msg = "Please try again!";
-			echo $mail->ErrorInfo;
+		    $msg = "Please try again!";
+			
 	}
 ?>
 
