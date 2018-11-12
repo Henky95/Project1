@@ -4,8 +4,7 @@
 <?php 
     include 'header.php';
     include 'database.php';
-    include 'functions.php';
-    $_POST['voornaam1'] = ""; 
+    $_POST['voornaam1'] = "";
     $input = mysqli_real_escape_string($dbConnection, $_POST['account_id']);
     $_SESSION['input'] = $_POST['account_id'];
     $query = "SELECT firstName, lastName, emailAdress, PostalCode,housenumber FROM users AS A JOIN adress ON a.Adress_adressId WHERE a.id=$input;";

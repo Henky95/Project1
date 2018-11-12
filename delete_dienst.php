@@ -1,10 +1,13 @@
-<?php include "shared/Header.php";?>
-<?php 
+<?php include "shared/Header.php";
+/*database code :
+INSERT INTO services (Id,Title,Description,ReturnService,Users_Id,IsRequest) 
+VALUES(1,'Wiskunde Bijles','Bijles voor een Examen','20 euro per les',1,1);*/
+
 //connectie maken met host
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "ProjectDB"; //naam  van de database
+$dbname = "mydb"; //naam  van de database
 $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 //test of het werkt
 	if(mysqli_connect_errno()){
@@ -13,33 +16,50 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 		mysqli_connect_errno().")");
 	}
 	
-$query = "SELECT Id, Title, Description FROM Services ";/* WHERE User_Id = 1*/
+$query = "SELECT Id, Title, Description FROM mydb.Services";//WHERE User_Id = $id";
 $result = mysqli_query($db,$query) or die('Error querying database.');
 
 ?>
- <form method="post">
+ <form method="POST">
          <div class="center">
 		 <label for="dienst">Naam dienst: </label>
 <select name="dienst">
 
 <?php //selecteer 1 dienst
 	while ($row = mysqli_fetch_assoc($result)){
-	 echo "<option value =\"" . $row['Id'] ."\"> " . $row['d\Title'] . " </option>\n";
+	 echo "<option value =\"" . $row['Id'] ."\"> " . $row['Title'] . " </option>\n";
 	 }
 
 ?>
 </select>
-</div>
+
 <br>
+<input type="submit" name="selected" value="select">
 <br>
-<input type="submit" value="select">
 </form>
 
 <?php
- if(!isset($_POST['submit'])){
-	echo("Geselceteerde dienst:" . $_POST['Title'] ."<br>");
-	echo("omschrijving:<br/>" . $_POST['Description'] ."<br>");
- }
- ?> 
+ if(isset($_POST['selected'])){
+	 $dienstid = $_POST['dienst'];
+	 $query2 = "SELECT Title, Description FROM mydb.Services WHERE Id = $dienstid";
+	 $result2 = mysqli_query($db,$query2) or die('Error querying 2nt time in database.');
+	 $row2 = mysqli_fetch_assoc($result2);
+	 echo "<br>";
+	echo("Geselceteerde dienst: " . $row2['Title'] ."<br><br>");
+	echo("omschrijving: " . $row2['Description'] ."<br><br>");
+	echo ('<input type="submit" name="delete" value="delete">');
+	 }
 
+ 
+ elseif(isset($_POST['delete'])){ 
+ $dienstid = $_POST['dienst'];
+ $query3 = " DELETE FROM mydb.Services WHERE Id = $dienstid ";
+ echo "deleted";
+ mysqli_query($db,$query3);
+ } 
+ else{ 
+	echo("selecteer een dienst <br>");
+ }?> 
+</div>
+</form>
 <?php include"shared/Footer.html" ?>

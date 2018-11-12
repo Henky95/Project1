@@ -3,8 +3,7 @@
     #gemaakt door Swen:
     include 'header.php';
     include 'database.php';
-    include 'functions.php';
-    $id = $_GET['product_Id']; 
+    $id = $_GET['product_Id'];
     $query = "SELECT `description`, `Id`, `IsRequest`, `ReturnService`, `Title`, `Users_id` FROM Services WHERE id=$id;";
     $result = mysqli_query($dbConnection, $query);
     $row = mysqli_fetch_array($result);

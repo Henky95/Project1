@@ -1,10 +1,9 @@
-<?php include 'header.php';?>
+<?php include 'Shared/header.php';?>
 <div class='geheel'>
 
 <?php 
     #Gemaakt door Swen:
     include 'database.php';
-    include 'functions.php';
     #Query om te runnen binnen de DATABASE:
     $query = 'SELECT `description`, `Id`, `IsRequest`, `ReturnService`, `Title`, `Users_id` FROM Services;';
     #Resultaat van de query die gerund wordt in de database

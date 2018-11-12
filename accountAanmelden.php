@@ -5,38 +5,70 @@
 <?php
 $voornaam=$achternaam=$TelNummer=$Opleiding=$email=$wachtwoord="";
 	$voornaamErr=$achternaamErr=$TelNummerErr=$OpleidingErr=$emailErr=$wachtwoordErr="";
+
+$finalError = '';
+ 
+//Test
+ 
+   //if ($_SERVER["REQUEST_METHOD"]== "post")
+   if (isset($_POST["submit"]) && !empty($_POST["submit"])){
+    
+    
+
+    if (isset($_POST["Voornaam"]) && !empty($_POST["Voornaam"]) && isset( $_POST["Achternaam"])&&!empty($_POST["Achternaam"]) && 
+        isset( $_POST["TelNummer"])&&!empty($_POST["TelNummer"]) && isset( $_POST["Opleiding"])&&!empty($_POST["Opleiding"]) &&
+         isset( $_POST["Gebruiknaam"])&&!empty($_POST["Gebruiknaam"]) && isset( $_POST["Wachtwoord"])&&!empty($_POST["Wachtwoord"])) {
+
+
+
+        $voornaam = test_input($_POST["Voornaam"]);
+        $achternaam = test_input($_POST["Achternaam"]);
+        $TelNummer = test_input($_POST["TelNummer"]);
+        $Opleiding = test_input($_POST["Opleiding"]);
+        $email = test_input($_POST["Gebruiknaam"]);
+        $wachtwoord = test_input($_POST["Wachtwoord"]);
+//Database kopelling
+       //$query = "INSERT INTO users ( FirstName, LastName, Studie, PhoneNummer, EmailAdress, Password, Adress_AdressId ) VALUES 
+       //('".$voornaam."','".$achternaam."','".$Opleiding."','".$TelNummer."','".$email."','".$wachtwoord."','1' ) ";
+        $query = "INSERT INTO users (FirstName, LastName, Studie, PhoneNummer, EmailAdress, Password, Adress_AdressId) VALUES ('$voornaam', '$achternaam', '$Opleiding','$TelNummer', '$email', '$wachtwoord', '1') ";
+               echo Query($query);
+    } else {
+        
 	//controle
-	if (!empty($_POST["Voornaam"])) {
+	if (empty($_POST["Voornaam"])) {
 	$voornaamErr = "Naam is verplicht";
 	} else {
 		
     $voornaam = isset($_POST["Voornaam"]);
     }
-    if (!empty($_POST["Achternaam"])) {
+    if (empty($_POST["Achternaam"])) {
 	$achternaamErr = "Naam is verplicht";
 	} else {
     $achternaam = isset( $_POST["Achternaam"]);
     }
-    if (!empty($_POST["TelNummer"])) {
+    if (empty($_POST["TelNummer"])) {
     	$TelNummerErr = "Dat is verplicht";
     } else{
     	$TelNummer= isset($_POST["TelNummer"]);
     }
-    if (!empty($_POST["Opleiding"])) {
+    if (empty($_POST["Opleiding"])) {
        $OpleidingErr = "verplicht veld";
     } else{
     	$Opleiding =isset ($_POST["Opleiding"]);
     }
-    if (!empty($_POST["Gebruiknaam"])) {
+    if (empty($_POST["Gebruiknaam"])) {
     	$emailErr = "verplicht veld";
     } else {
     	$email =isset( $_POST["Gebruiknaam"]);
     }
-    if (!empty($_POST["Wachtwoord"])) {
+    if (empty($_POST["Wachtwoord"])) {
     	$wachtwoordErr = "verplicht veld";
     } else {
     	$wachtwoord = isset($_POST["Wachtwoord"]);
     }
+    $finalError = 'vul alles in';
+}
+}
 ?>
 <!-- formuliermaken-->
 	<form method="post" action="<?php echo
@@ -57,24 +89,12 @@ E-mail:<span class="error">* <?php echo $emailErr; ?> </span><br>
 Wachtwoord:<span class="error">* <?php echo $wachtwoordErr; ?> </span><br>
 <input type="password" name="Wachtwoord"><br><br>
 
-<input type="submit" value="aanmelden">
+<input type="submit" name="submit" value="aanmelden">
 <?php
-include 'functions.php';
-//Test
 
-	if ($_SERVER["REQUEST_METHOD"]== "post") {
-        $voornaam = test_input($_POST["Voornaam"]);
-		$achternaam = test_input($_POST["Achternaam"]);
-		$TelNummer = test_input($_POST["TelNummer"]);
-		$Opleiding = test_input($_POST["Opleiding"]);
-		$email = test_input($_POST["Gebruiknaam"]);
-		$wachtwoord = test_input($_POST["Wachtwoord"]);
-//Database kopelling
-		$query = "insert into users ( 'FirstName' , 'LastName', 'Studie', 'PhoneNummer ','EmailAdress', 'Password')	value (".$voornaam."','".$achternaam."','".$Opleiding."','".$TelNummer."','".$email."','".$wachtwoord.") ";
-		        echo Query($query);
-    } else {
-        echo 'vul alles in';
-    }
-
+if (!empty($finalError))
+{
+    echo $finalError;
+}
 	?>
 	<?php include "Shared/Footer.html"; ?>

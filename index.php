@@ -14,16 +14,15 @@
 
 
             <?php
-            include 'functions.php';
 
             $table = Query("SELECT * FROM mydb.services");
-
+			
             if (mysqli_num_rows($table) > 0) {
                 while ($row = mysqli_fetch_assoc($table)) {
 
                     $user = mysqli_fetch_assoc(Query('select * from mydb.users where Id =' . $row['Users_Id']));
 
-                    echo '<h2>' . $row['Title'] . '</h2>';
+                    echo '<div class="serviceblock"><h2 class="title">' . $row['Title'] . '</h2>';
                     echo '<hr/>';
 
                     if ($row['IsRequest']) {
@@ -35,7 +34,7 @@
                     echo ' door ' . $user['FirstName'] . ' ' . $user['Insertion'] . ' ' . $user['LastName'] .'</h5>';
 
                     echo '<p>' . nl2br($row['Description']) . '</p>';
-                    echo '<p>' . nl2br($row['ReturnService']) . '</p>';
+                    echo '<p>' . nl2br($row['ReturnService']) . '</p> </div>';
                 }
             }
             ?>

@@ -1,6 +1,7 @@
 <?php
 /*Just for your server-side code*/
 header('Content-Type: text/html; charset=ISO-8859-1');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,5 +25,14 @@ header('Content-Type: text/html; charset=ISO-8859-1');
     <a href="bestellen.php">Bestellen</a>
     <a href="dienstAanvragen.php">Aanvragen</a>
 	<a href="delete_dienst.php">Verwijderen</a>
-    <a href="account.php" class="right">Account</a>
+    <?php
+    include "functions.php";
+
+    if (LoggedIn()){
+        echo "<a href='account.php' class='right'>My Account</a>";
+    }else {
+        echo "<a href='accountAanmelden' class='right'>Account aanmaken</a> <a href='inloggen.php' class='right'>in loggen</a>";
+    }
+
+    ?>
 </div>
