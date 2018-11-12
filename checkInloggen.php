@@ -15,7 +15,7 @@ if(isset($_POST["accountnaam"], $_POST["wachtwoord"])) {
 		$_SESSION["Ingelogd"] = true;
 		$_SESSION["naamEmail"] = $nameEmail;
 		$queryAccountID = "SELECT id FROM Users WHERE EmailAdress='".$nameEmail."'";
-		$_SESSION["accountID"] = mysqli_query($dbConnection,$queryAccountID);
+		$_SESSION["accountID"] = mysqli_fetch_assoc(mysqli_query($dbConnection,$queryAccountID))["id"];
 		echo "Login succesvol, welkom!<br>";
 	} else {
 		echo "De gebruikersnaam of wachtwoord is onjuist!<br>";
@@ -23,7 +23,7 @@ if(isset($_POST["accountnaam"], $_POST["wachtwoord"])) {
 }
 
 ?>
-<a href = "Inloggen.php">Naar inlogpagina</a>
+<a href = "index.php">Naar home pagina</a>
 
 <?php 
 include "shared/Footer.html";

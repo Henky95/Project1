@@ -31,7 +31,7 @@ session_start();
     if (LoggedIn()){
         echo "<a href='account.php' class='right'>My Account</a>";
     }else {
-        echo "<a href='accountAanmelden.php' class='right'>Account aanmaken</a> <a href='inloggen.php' class='right'>in loggen</a>";
+        echo "<a href='accountAanmelden.php' class='right'>Account aanmaken</a> <a href='inloggen.php' class='right'>log in</a>";
     }
 
     ?>

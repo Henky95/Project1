@@ -16,7 +16,7 @@ function test_input($data)
 
 Function LoggedIn()
 {
-    return array_key_exists("Ingelogd", $_SESSION) && $_SESSION["Ingelogd"] == true;
+    return isset($_SESSION["Ingelogd"]) && !empty($_SESSION["Ingelogd"]) && $_SESSION["Ingelogd"] == true;
 }
 
 function GetCurrrentUser()
@@ -34,6 +34,9 @@ function GetCurrrentUser()
 function GetCurrentUserId()
 {
     if (LoggedIn()) {
+        var_dump($_SESSION["accountID"]);
+        echo "" . $_SESSION["accountID"];
+
         return $_SESSION["accountID"];
     } else {
         return null;

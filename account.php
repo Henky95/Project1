@@ -1,21 +1,6 @@
-<?php include "shared/Header.php"; ?>
-
-<!--<style>-->
-<!--.button {-->
-<!--    background-color: #0099ff; -->
-<!--    border: none;-->
-<!--    color: white;-->
-<!--    padding: 20px;-->
-<!--    text-align: center;-->
-<!--    text-decoration: none;-->
-<!--    display: inline-block;-->
-<!--    font-size: 32px;-->
-<!--    margin: 4px 2px;-->
-<!--    cursor: pointer;-->
-<!--}-->
-<!--</style>-->
-
 <?php
+
+include "shared/Header.php";
 
 $account = GetCurrrentUser();
 
