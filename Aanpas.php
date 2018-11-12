@@ -33,6 +33,8 @@
         <p class ='Form'> Voornaam:<input type = "input" name = "voornaam1" placeholder='Voornaam'> <br />
         <p class ='Form'> Achternaam:<input type = "input" name = "achternaam" placeholder='Achternaam'> <br />
         <p class ='Form'> Email Adress: <input type = "input" name = "Emailadress" placeholder='EmailAdress'><br />
+        <p class ='Form'> Studie: <input type = "input" name = "studie" placeholder='Studie'><br />
+        <p class ='Form'> Telefoonnummer: <input type = "input" name = "phonenumber" placeholder='Telefoonnummer'><br />
         <p class ='Form'> Adres: <input type = "input" name = "adress" placeholder='Adress'> <br/> 
         <p class ='Form'> Postcode <input type = "input" name = "postcode" placeholder='Postcode'><br/> 
         <p class ='Form'> Huisnummer:<input type = "input" name = "Huisnummer" placeholder='Huisnummer'><br/> <br/> <br/> 
