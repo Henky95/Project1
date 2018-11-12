@@ -23,10 +23,11 @@ if (isset($_POST["submit"]) && !empty($_POST["submit"])){// $_SERVER["REQUEST_ME
          //            value (false,'$Opleiding','false', $melding, 1)";
 
                      //        echo $query;
+	     $userId = GetCurrentUserId();
 
-        $query = "INSERT INTO services (Description, IsRequest, Users_Id) VALUES ('$Opleiding', '$melding', '1')";
+        $query = "INSERT INTO mydb.services (Title, Description, IsRequest, Users_Id) VALUES ('$Opleiding', '$melding', true, '$userId')";
 
-        echo Query($query);
+             echo Query($query);
     } else {
         if (empty($_POST["Opleiding"])) {
             $Opleidingerror = "dat is verplicht";
