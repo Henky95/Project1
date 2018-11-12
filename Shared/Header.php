@@ -25,6 +25,7 @@ session_start();
     <a href="bestellen.php">Bestellen</a>
     <a href="dienstAanvragen.php">Aanvragen</a>
 	<a href="delete_dienst.php">Verwijderen</a>
+	<a href="sendemail.php">Contact
     <?php
     include "functions.php";
 
