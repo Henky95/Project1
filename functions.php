@@ -34,9 +34,6 @@ function GetCurrrentUser()
 function GetCurrentUserId()
 {
     if (LoggedIn()) {
-        var_dump($_SESSION["accountID"]);
-        echo "" . $_SESSION["accountID"];
-
         return $_SESSION["accountID"];
     } else {
         return null;
