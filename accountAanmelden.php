@@ -29,8 +29,8 @@ $finalError = '';
         $wachtwoord = test_input($_POST["Wachtwoord"]);
 //Database kopelling
        //$query = "INSERT INTO users ( FirstName, LastName, Studie, PhoneNummer, EmailAdress, Password, Adress_AdressId ) VALUES 
-       //('".$voornaam."','".$achternaam."','".$Opleiding."','".$TelNummer."','".$email."','".$wachtwoord."','1' ) ";
-        $query = "INSERT INTO users (FirstName, LastName, Studie, PhoneNummer, EmailAdress, Password, Adress_AdressId) VALUES ('$voornaam', '$achternaam', '$Opleiding','$TelNummer', '$email', '$wachtwoord', '1') ";
+       //('".$voornaam."','".$mydb.usersachternaam."','".$Opleiding."','".$TelNummer."','".$email."','".$wachtwoord."','1' ) ";
+        $query = "INSERT INTO mydb.users  (FirstName, LastName, Studie, PhoneNumber, EmailAdress, Password, Adress_AdressId) VALUES ('$voornaam', '$achternaam', '$Opleiding','$TelNummer', '$email', '$wachtwoord', '1') ";
                echo Query($query);
     } else {
         
