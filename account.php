@@ -20,16 +20,8 @@ if ($account != null) {
     echo "<table>
             <tr>
                 <th>
-                    Voornaam
+                    Naam
                 </th>
-                <th>
-                    Tussenvoegsel
-                </th>
-                <th>
-                    Achternaam
-                </th>
-            </tr>
-            <tr>
                 <td>
                     " . $account["FirstName"] . "
                 </td>
@@ -44,8 +36,6 @@ if ($account != null) {
                 <th>
                     Studie
                 </th>
-            </tr>
-            <tr>
                 <td>
                     " . $account["Studie"] . "
                 </td>
@@ -54,8 +44,6 @@ if ($account != null) {
                 <th>
                     Telefoon nummer
                 </th>
-            </tr>
-            <tr>
                 <td>
                     " . $account["PhoneNumber"] . "
                 </td>            
@@ -63,9 +51,7 @@ if ($account != null) {
             <tr>            
                 <th>
                     E-mail
-                </th>
-            </tr>
-            <tr>            
+                </th>        
                 <td>
                     " . $account["EmailAdress"] . "
                 </td>

@@ -13,6 +13,10 @@ $id = GetCurrentUserId();
 if ($id != null){
     Query("Delete From mydb.services where Users_Id = " . $id);
     Query("Delete From mydb.users where Id = $id");
+
+    $_SESSION["Ingelogd"] = null;
+    $_SESSION["naamEmail"] = null;
+    $_SESSION["accountID"] = null;
 }
 
 ?>

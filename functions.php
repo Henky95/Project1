@@ -22,8 +22,8 @@ Function LoggedIn()
 function GetCurrrentUser()
 {
     $id = GetCurrentUserId();
-    if (true){//$id != null) {
-        $result = Query("select * from mydb.users where Id = 1");//$id");
+    if ($id != null) {
+        $result = Query("select * from mydb.users where Id = $id");
 
         return mysqli_fetch_assoc($result);
     } else {

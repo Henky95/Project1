@@ -1,7 +1,7 @@
 <?php  
 
     #gemaakt door Swen:
-    include 'header.php';
+    include 'shared/header.php';
     include 'database.php';
     $id = $_GET['product_Id'];
     $query = "SELECT `description`, `Id`, `IsRequest`, `ReturnService`, `Title`, `Users_id` FROM Services WHERE id=$id;";
