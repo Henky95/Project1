@@ -1,20 +1,19 @@
 <?php
-    Session_start();
     include 'shared/header.php';
     include 'database.php';
-    $gaTerug =" <br /> <a href='inputnaam.php'> Klik hier om terug te gaan </a>";
+    $gaTerug =" <br /> <a href='account.php'> Klik hier om terug te gaan </a>";
     $firstName = $_POST['voornaam1'];
     $lastName = $_POST['achternaam'];
     $emailAdress = $_POST['Emailadress'];
     $studie = $_POST['studie'];
-    $telefoonNummer = $_POST['phonenumber'];
+    $phonenumber = $_POST['phonenumber'];
     $adres = $_POST['adress'];
     $postcode = $_POST['postcode'];
     $huisnummer = $_POST['Huisnummer'];
     $_POST['account_id'] = $_SESSION['input'];
-    $input = mysqli_real_escape_string($dbConnection, $_POST['account_id']);
-    $adress = "SELECT id FROM adress WHERE StreetName LIKE $adress";
-    $adressQuery = mysqli_query($dbConnection, $adress);
+    $input = mysqli_real_escape_string($dbConnection, $_SESSION['accountID']);
+    $adress = "SELECT id FROM adress WHERE StreetName LIKE $adres";
+    $adressid = mysqli_query($dbConnection, $adress);
     $wijzigVoornaam = "UPDATE users SET firstName ='$firstName' where id = '$input'";
     $wijzigAchternaam = "UPDATE users SET lastName ='$lastName' where id = '$input'";
     $wijzigEmail = "UPDATE users SET emailAdress='$emailAdress' WHERE id = '$input'";
@@ -29,6 +28,7 @@
             if(preg_match("/^[a-zA-z]*$/",$firstName)){
                 echo "De voornaam is gewijzigd naar $firstName <br />";
                 mysqli_query($dbConnection, $wijzigVoornaam);
+                mysqli_errno($dbConnection) . mysqli_error($dbConnection);
             }
             else{
                 echo "Er is geen voornaam ingevoerd  <br />";
@@ -70,8 +70,6 @@
         
     
     echo $gaTerug;
-
-    echo "<h1> De gegevens van dit account zijn: \n <br/>";
     
 
 
