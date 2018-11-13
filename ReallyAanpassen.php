@@ -71,7 +71,7 @@
         else{echo "Het adress is niet ingevoerd. <br />";}
         }
         if(!empty($wachtwoord) && !empty($verificatieWachtwoord) && $wachtwoord == $verificatieWachtwoord){
-            if(strlen($wachtwoord) > 8){
+            if(strlen($wachtwoord) >= 8){
             echo "Het wachtwoord is aangepast <br />";
             mysqli_query($dbConnection, $wijzigWachtwoord);
         }
