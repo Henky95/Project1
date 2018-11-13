@@ -40,7 +40,7 @@ if (!empty($_POST)) {
 
 //        echo $query;
 
-        echo Query($query);
+        Query($query);
     } else {
         echo 'vul alles in';
     }
