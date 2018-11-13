@@ -33,9 +33,10 @@ if (!empty($_POST)) {
         $title = test_input($_POST['title']);
         $Description = test_input($_POST['Description']);
         $ReturnService = test_input($_POST['ReturnService']);
+        $userId = $_SESSION["accountID"];
 
         $query = "insert into mydb.services (services.Title, services.Description, services.ReturnService, services.IsRequest, services.Users_Id)
-                     value ('$title','$Description','$ReturnService', false, 1)";
+                     value ('$title','$Description','$ReturnService', false, $userId)";
 
 //        echo $query;
 
