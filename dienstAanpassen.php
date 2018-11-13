@@ -1,23 +1,25 @@
 <?php
-include "database.php";
-include "shared/Header.php";
+include "functions.php";
+include "dienstDB.php";
+include "Header.php";
 ?>
 
 <h3>Dienst aanpassen</h3>
 <?php
 if (isset($_POST["confirmation"])) {
-	$naam = mysqli_real_escape_string($dbConnection, $_POST["naam"]);
-	$omschrijving = mysqli_real_escape_string($dbConnection, $_POST["omschrijving"]);
+	$naam = mysqli_real_escape_string($db, $_POST["naam"]);
+	$omschrijving = mysqli_real_escape_string($db, $_POST["omschrijving"]);
 	
 	$query = "UPDATE Services SET
 		Title = '".$naam."',
 		Description = '".$omschrijving."'";
 		
-	$result = mysqli_query($dbConnection, $query);
+	$result = mysqli_query($db, $query);
 } else {
-	$emailAdress = $_SESSION["naamEmail"];
+// HIER NOG VAN MAKEN DAT HIJ OPHAALT WAT HET EMAILADRES IS VAN DE INGELOGDE PERSOON
+	$emailAdress = "piet@pieter.nl";
 	$query = "SELECT Title, Description FROM Services JOIN Users ON Services.Users_id=Users.Id WHERE EmailAdress='".$emailAdress."'";
-	$result = mysqli_query($dbConnection, $query);
+	$result = mysqli_query($db, $query);
 	if (mysqli_num_rows($result) > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {
 			$naam = $row["Title"];
@@ -37,4 +39,4 @@ if (isset($_POST["confirmation"])) {
 	<input type="Button" value="Terug" onclick="javascript:history.back();">
 </form>
 
-<?php include "shared/Footer.html" ?>
+<?php include "Footer.php" ?>
