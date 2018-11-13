@@ -1,6 +1,6 @@
 <?php
     Session_start();
-    include 'header.php';
+    include 'shared/header.php';
     include 'database.php';
     $gaTerug =" <br /> <a href='inputnaam.php'> Klik hier om terug te gaan </a>";
     $firstName = $_POST['voornaam1'];

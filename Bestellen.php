@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'shared/header.php';?>
 <div class='geheel'>
 
 <?php 
@@ -20,8 +20,6 @@
         echo "</div> </a> \n";
         
     }
-    
+    include 'shared/footer.html'
 ?>
-
-</div>
  </body>

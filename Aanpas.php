@@ -1,15 +1,11 @@
-<?php session_start();?>
-
 
 <?php 
-    include 'header.php';
+    include 'shared/header.php';
     include 'database.php';
     $_POST['voornaam1'] = "";
-    $input = mysqli_real_escape_string($dbConnection, $_POST['account_id']);
-    $_SESSION['input'] = $_POST['account_id'];
+    $input = mysqli_real_escape_string($dbConnection, $_SESSION['accountID']);
     $query = "SELECT firstName, lastName, emailAdress, PostalCode,housenumber FROM users AS A JOIN adress ON a.Adress_adressId WHERE a.id=$input;";
     $result = mysqli_query($dbConnection, $query);
-    
     if(!$result){
         echo "Error %s\n", mysqli_error($dbConnection);
     }
