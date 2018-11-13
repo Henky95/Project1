@@ -10,6 +10,8 @@
     $adres = $_POST['adress'];
     $postcode = $_POST['postcode'];
     $huisnummer = $_POST['Huisnummer'];
+    $wachtwoord = $_POST['wachtwoord'];
+    $verificatieWachtwoord = $_POST['verificatieWachtwoord'];
     $_POST['account_id'] = $_SESSION['input'];
     $input = mysqli_real_escape_string($dbConnection, $_SESSION['accountID']);
     $adress = "SELECT id FROM adress WHERE StreetName LIKE $adres";
@@ -20,6 +22,7 @@
     $wijzigStudie = "UPDATE users SET studie = $studie WHERE id = '$input'";
     $wijzigTelefoonnummer = "UPDATE users SET PhoneNumber = $phonenumber WHERE id= '$input'";
     $wijzigAdress = "UPDATE users SET Address_AdressID = $adressid WHERE id = $input";
+    $wijzigWachtwoord = "UPDATE users SET password = $wachtwoord where id = $input";
     
     #Als er in de vorige pagina op submit gedrukt is:
     if(isset($_POST['submit'])){
@@ -59,15 +62,27 @@
             echo "Het telefoonnummer is gewijzigd naar $phonenumber";
             mysqli_query($dbConnection, $wijzigTelefoonnummer);
         }
-        else{Echo "Er is geen telefoonnummer ingevoerd";}
+        else{Echo "Er is geen telefoonnummer ingevoerd <br />";}
 
         if(!empty($adress) && !empty($postcode) && !empty($huisnummer)){
             echo "Het adress is aangepast naar $adress, met als postcode $postcode , en het huisnummer is $huisnummer ";
             mysqli_query($dbConnection, $wijzigAdress);
         }
-        else{echo "Het adress is niet ingevoerd.";}
+        else{echo "Het adress is niet ingevoerd. <br />";}
         }
-        
+        if(!empty($wachtwoord) && !empty($verificatieWachtwoord) && $wachtwoord == $verificatieWachtwoord){
+            if(strlen($wachtwoord) > 8){
+            echo "Het wachtwoord is aangepast <br />";
+            mysqli_query($dbConnection, $wijzigWachtwoord);
+        }
+        else{Echo "Het wachtwoord voldoet niet aan de eisen.";}
+        }
+        elseif(empty($wachtwoord) && empty($verificatieWachtwoord)){
+            echo "U heeft er voor gekozen geen wachtwoord wijziging door te voeren <br />";
+        }
+        elseif($wachtwoord != $verificatieWachtwoord){
+            echo "De wachtwoorden komen niet overeen, klik <a href='aanpas.php'> hier </a> om terug te gaan <br />";
+        }
     
     echo $gaTerug;
     

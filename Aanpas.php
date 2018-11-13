@@ -1,4 +1,6 @@
 
+
+
 <?php 
     include 'shared/header.php';
     include 'database.php';
@@ -32,7 +34,9 @@
         <p class ='Form'> Telefoonnummer: <input type = "input" name = "phonenumber" placeholder='Telefoonnummer'><br />
         <p class ='Form'> Adres: <input type = "input" name = "adress" placeholder='Adress'> <br/> 
         <p class ='Form'> Postcode <input type = "input" name = "postcode" placeholder='Postcode'><br/> 
-        <p class ='Form'> Huisnummer:<input type = "input" name = "Huisnummer" placeholder='Huisnummer'><br/> <br/> <br/> 
+        <p class ='Form'> Huisnummer:<input type = "input" name = "Huisnummer" placeholder='Huisnummer'><br/>
+        <p class ='Form'> Wachtwoord:<input type = "input" name = "wachtwoord" placeholder='Nieuw Wachtwoord'><br/>
+        <p class ='Form'> Wachtwoord:<input type = "input" name = "verificatieWachtwoord" placeholder='Nieuw wachtwoord'><br/>
         <input type ='submit' value = 'Aanpassen' name='submit'>
     </form> </p> 
 
