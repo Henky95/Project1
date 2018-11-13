@@ -24,7 +24,7 @@
     echo "<p class='naam'> Het email adress van deze persoon is $emailAdress \n</p>";
     Echo "<form action=mailto:$emailAdress method='get'>";
     echo "<input name='subject' type='text' placeholder='Subject'/><br/><br/>\n";
-    echo "<textarea name='body' placeholder='Hier kun je je interesse tonen'></textarea>";
+    echo "<textarea name='body' placeholder='Hier kun je je interesse tonen d.m.v een email'></textarea>";
     echo "<input type='submit' value='Send'/>";
     echo "</form>";
     mysqli_free_result($result);
