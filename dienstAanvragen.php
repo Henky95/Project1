@@ -16,18 +16,12 @@ if (isset($_POST["submit"]) && !empty($_POST["submit"])){// $_SERVER["REQUEST_ME
         $Opleiding = test_input($_POST["Opleiding"]);
         $melding = test_input($_POST["melding"]);
 
-        //$query = "insert into mydb.services(services.Title, services.Description, services.ReturnService, services.IsRequest, services.Users_Id)
-                  //value (false,'$Opleiding','false', $melding, 2)";
-
-        //$query = "insert into service(service.Title, service.Description, service.ReturnService, service.IsRequest, service.Users_Id)
-         //            value (false,'$Opleiding','false', $melding, 1)";
-
-                     //        echo $query;
-	     $userId = GetCurrentUserId();
-
+       
+	     $userId = GetCurrrentUser();
+           if ($userId != null){
         $query = "INSERT INTO mydb.services (Title, Description, IsRequest, Users_Id) VALUES ('$Opleiding', '$melding', true, '$userId')";
-
-             echo Query($query);
+         
+             echo Query($query);}
     } else {
         if (empty($_POST["Opleiding"])) {
             $Opleidingerror = "dat is verplicht";
